@@ -115,8 +115,17 @@ Take the following data and normalize it into a 3NF database.
   - `id`, numeric value with no decimal places that should autoincrement.
   - `name`, string, add whatever is necessary to make searching by name faster.
   - `budget` numeric value.
+  
 
 - constraints
   - the `id` should be the primary key for the table.
   - account `name` should be unique.
   - account `budget` is required.
+
+--- answer
+
+create table accounts(
+	accountID serial primary key,
+	name varchar(255) unique,
+	budget int not null
+)
